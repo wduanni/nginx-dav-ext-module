@@ -1052,7 +1052,7 @@ ngx_http_dav_ext_propfind_response(ngx_http_request_t *r, ngx_array_t *entries,
 
     for (n = 0; n < entries->nelts; n++) {
         escape = 2 * ngx_escape_uri(NULL, entry[n].uri.data, entry[n].uri.len,
-                                    NGX_ESCAPE_URI);
+                                    NGX_ESCAPE_URI_COMPONENT);
         if (escape == 0) {
             continue;
         }
@@ -1064,7 +1064,7 @@ ngx_http_dav_ext_propfind_response(ngx_http_request_t *r, ngx_array_t *entries,
 
         entry[n].uri.len = (u_char *) ngx_escape_uri(p, entry[n].uri.data,
                                                      entry[n].uri.len,
-                                                     NGX_ESCAPE_URI)
+                                                     NGX_ESCAPE_URI_COMPONENT)
                            - p;
         entry[n].uri.data = p;
     }
