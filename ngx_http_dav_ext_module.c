@@ -1066,7 +1066,7 @@ ngx_http_dav_ext_propfind_response(ngx_http_request_t *r, ngx_array_t *entries,
                                                      entry[n].uri.len,
                                                      NGX_ESCAPE_URI_COMPONENT)
                            - p;
-         for(int i = 0; entry[n].uri.len > 2 && i <= entry[n].uri.len - 3; i++){
+         for(size_t i = 0; entry[n].uri.len > 2 && i <= entry[n].uri.len - 3; i++){
             if (p[i] == '%' && p[i + 1] == '2' && p[i + 2] == 'F'){
                 ngx_cpystrn(p + i + 1, p + i + 3, entry[n].uri.len - i);
 
