@@ -15,7 +15,8 @@ only supports GET,HEAD,PUT,DELETE,MKCOL,COPY,MOVE methods.
 
 For full WebDAV_ support in nginx_ you need to enable the standard
 ngx_http_dav_module_ as well as this module for the missing methods.
-
+Fix encode [] character
+Fix / lose
 
 Build
 =====
